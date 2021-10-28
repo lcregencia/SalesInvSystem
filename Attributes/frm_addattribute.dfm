@@ -1,0 +1,275 @@
+object frm_addatt: Tfrm_addatt
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Add Attribute'
+  ClientHeight = 230
+  ClientWidth = 367
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RzPanel2: TRzPanel
+    Left = 0
+    Top = 158
+    Width = 367
+    Height = 72
+    Align = alBottom
+    GradientColorStyle = gcsMSOffice
+    TabOrder = 0
+    VisualStyle = vsGradient
+    object RzLabel7: TRzLabel
+      Left = 130
+      Top = 14
+      Width = 68
+      Height = 13
+      Caption = 'F5 - Refresh'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Transparent = True
+    end
+    object RzLabel12: TRzLabel
+      Left = 130
+      Top = 33
+      Width = 59
+      Height = 13
+      Caption = 'Esc - Close'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Transparent = True
+    end
+  end
+  object AdvPanel1: TAdvPanel
+    Left = 0
+    Top = 0
+    Width = 367
+    Height = 158
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 16645114
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 7485192
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    UseDockManager = True
+    Version = '2.1.0.3'
+    BorderColor = 16765615
+    Caption.Color = 16575452
+    Caption.ColorTo = 16571329
+    Caption.Font.Charset = DEFAULT_CHARSET
+    Caption.Font.Color = clBlack
+    Caption.Font.Height = -11
+    Caption.Font.Name = 'Tahoma'
+    Caption.Font.Style = []
+    Caption.GradientDirection = gdVertical
+    Caption.Indent = 2
+    Caption.ShadeLight = 255
+    CollapsColor = clNone
+    CollapsDelay = 0
+    ColorTo = 16643051
+    ShadowColor = clBlack
+    ShadowOffset = 0
+    StatusBar.BorderColor = 13542013
+    StatusBar.BorderStyle = bsSingle
+    StatusBar.Font.Charset = DEFAULT_CHARSET
+    StatusBar.Font.Color = 7485192
+    StatusBar.Font.Height = -11
+    StatusBar.Font.Name = 'Tahoma'
+    StatusBar.Font.Style = []
+    StatusBar.Color = 16575452
+    StatusBar.ColorTo = 16571329
+    StatusBar.GradientDirection = gdVertical
+    Styler = AdvPanelStyler1
+    DesignSize = (
+      367
+      158)
+    FullHeight = 200
+    object RzLabel1: TRzLabel
+      Left = 8
+      Top = 56
+      Width = 78
+      Height = 16
+      Caption = 'Description:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 7485192
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Transparent = True
+    end
+    object RzLabel2: TRzLabel
+      Left = 8
+      Top = 83
+      Width = 36
+      Height = 16
+      Caption = 'Type:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 7485192
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Transparent = True
+    end
+    object RzLabel3: TRzLabel
+      Left = 8
+      Top = 8
+      Width = 112
+      Height = 19
+      Caption = 'Add Attribute'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 7485192
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Transparent = True
+    end
+    object btn_query: TRzBitBtn
+      Left = 0
+      Top = 123
+      Width = 35
+      Height = 35
+      Anchors = [akLeft, akBottom]
+      TabOrder = 4
+      OnClick = btn_queryClick
+    end
+    object btn_save: TRzButton
+      Left = 166
+      Top = 123
+      Width = 100
+      Height = 35
+      Default = True
+      Anchors = [akRight, akBottom]
+      Caption = 'Save'
+      TabOrder = 2
+      OnClick = btn_saveClick
+    end
+    object btn_cancel: TRzButton
+      Left = 266
+      Top = 123
+      Width = 100
+      Height = 35
+      Anchors = [akRight, akBottom]
+      Caption = 'Cancel'
+      TabOrder = 3
+      OnClick = btn_cancelClick
+    end
+    object edt_type: TRzEdit
+      Left = 92
+      Top = 80
+      Width = 261
+      Height = 21
+      Color = clInfoBk
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object edt_description: TRzEdit
+      Left = 92
+      Top = 53
+      Width = 261
+      Height = 21
+      TabOrder = 0
+    end
+  end
+  object AdvPanelStyler1: TAdvPanelStyler
+    Tag = 0
+    Settings.AnchorHint = False
+    Settings.BevelInner = bvNone
+    Settings.BevelOuter = bvNone
+    Settings.BevelWidth = 1
+    Settings.BorderColor = 16765615
+    Settings.BorderShadow = False
+    Settings.BorderStyle = bsNone
+    Settings.BorderWidth = 0
+    Settings.CanMove = False
+    Settings.CanSize = False
+    Settings.Caption.Color = 16575452
+    Settings.Caption.ColorTo = 16571329
+    Settings.Caption.Font.Charset = DEFAULT_CHARSET
+    Settings.Caption.Font.Color = clBlack
+    Settings.Caption.Font.Height = -11
+    Settings.Caption.Font.Name = 'Tahoma'
+    Settings.Caption.Font.Style = []
+    Settings.Caption.GradientDirection = gdVertical
+    Settings.Caption.Indent = 2
+    Settings.Caption.ShadeLight = 255
+    Settings.Collaps = False
+    Settings.CollapsColor = clNone
+    Settings.CollapsDelay = 0
+    Settings.CollapsSteps = 0
+    Settings.Color = 16645114
+    Settings.ColorTo = 16643051
+    Settings.ColorMirror = clNone
+    Settings.ColorMirrorTo = clNone
+    Settings.Cursor = crDefault
+    Settings.Font.Charset = DEFAULT_CHARSET
+    Settings.Font.Color = 7485192
+    Settings.Font.Height = -11
+    Settings.Font.Name = 'Tahoma'
+    Settings.Font.Style = []
+    Settings.FixedTop = False
+    Settings.FixedLeft = False
+    Settings.FixedHeight = False
+    Settings.FixedWidth = False
+    Settings.Height = 120
+    Settings.Hover = False
+    Settings.HoverColor = clNone
+    Settings.HoverFontColor = clNone
+    Settings.Indent = 0
+    Settings.ShadowColor = clBlack
+    Settings.ShadowOffset = 0
+    Settings.ShowHint = False
+    Settings.ShowMoveCursor = False
+    Settings.StatusBar.BorderColor = 13542013
+    Settings.StatusBar.BorderStyle = bsSingle
+    Settings.StatusBar.Font.Charset = DEFAULT_CHARSET
+    Settings.StatusBar.Font.Color = 7485192
+    Settings.StatusBar.Font.Height = -11
+    Settings.StatusBar.Font.Name = 'Tahoma'
+    Settings.StatusBar.Font.Style = []
+    Settings.StatusBar.Color = 16575452
+    Settings.StatusBar.ColorTo = 16571329
+    Settings.StatusBar.GradientDirection = gdVertical
+    Settings.TextVAlign = tvaTop
+    Settings.TopIndent = 0
+    Settings.URLColor = clBlue
+    Settings.Width = 0
+    Style = psWindows7
+    Left = 232
+    Top = 168
+  end
+  object ActionList1: TActionList
+    Left = 312
+    Top = 168
+    object esc: TAction
+      Caption = 'esc'
+      ShortCut = 27
+      OnExecute = escExecute
+    end
+    object refresh: TAction
+      Caption = 'refresh'
+      ShortCut = 116
+      OnExecute = refreshExecute
+    end
+  end
+end
