@@ -1,0 +1,318 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1FE7804F-2FE8-493C-9C93-50924C2A953E}</ProjectGuid>
+        <ProjectVersion>14.3</ProjectVersion>
+        <MainSource>DOH.dpr</MainSource>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_DependencyCheckOutputName>DOH.exe</DCC_DependencyCheckOutputName>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Platform>x86</DCC_Platform>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <Icon_MainIcon>DOH_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>DOH_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>false</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="Main\main.pas">
+            <Form>main_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Inventory\inventory_details.pas">
+            <Form>inventory_frm</Form>
+        </DCCReference>
+        <DCCReference Include="procedures\procedures.pas"/>
+        <DCCReference Include="datamodule\datamodule.pas">
+            <Form>dm</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="procedures\variables.pas"/>
+        <DCCReference Include="procedures\sql_statement.pas"/>
+        <DCCReference Include="Inventory\stock_in.pas">
+            <Form>inventory_add_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Settings\trans_code.pas">
+            <Form>trans_code_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Settings\add_trans_code.pas">
+            <Form>trans_code_add_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Inventory\add_stocks.pas">
+            <Form>add_stocks_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Authentication\authentication_frm.pas">
+            <Form>confirmation_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Authentication\login.pas">
+            <Form>login_frm</Form>
+        </DCCReference>
+        <DCCReference Include="datamodule\settings.pas">
+            <Form>settings_DM</Form>
+        </DCCReference>
+        <DCCReference Include="Attributes\frm_attribute.pas">
+            <Form>frm_attributes</Form>
+        </DCCReference>
+        <DCCReference Include="Attributes\frm_selectattribute.pas">
+            <Form>frm_selectatt</Form>
+        </DCCReference>
+        <DCCReference Include="Attributes\frm_addattribute.pas">
+            <Form>frm_addatt</Form>
+        </DCCReference>
+        <DCCReference Include="MasterFile\supplier_masterfile.pas">
+            <Form>mf_supplier_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Supplier\frm_supplierdetails.pas">
+            <Form>frm_supplier_details</Form>
+        </DCCReference>
+        <DCCReference Include="Inventory\stock_card.pas">
+            <Form>stock_card_frm</Form>
+        </DCCReference>
+        <DCCReference Include="MasterFile\customer_masterfile.pas">
+            <Form>mf_customer_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Customer\frm_customerdetails.pas">
+            <Form>frm_customer_details</Form>
+        </DCCReference>
+        <DCCReference Include="Purchase Order\purchase_order_details.pas">
+            <Form>purchase_order_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Purchase Order\purchase_order_additems.pas">
+            <Form>purchase_order_additem</Form>
+        </DCCReference>
+        <DCCReference Include="Purchase Order\purchase_order.pas">
+            <Form>mf_po_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Receiving Report\mf_receiving_report.pas">
+            <Form>mf_receiving_report_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Receiving Report\receiving_report.pas">
+            <Form>receiving_report_frm</Form>
+        </DCCReference>
+        <DCCReference Include="MasterFile\employee_masterfile.pas">
+            <Form>mf_employee_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Employee\frm_employeedetails.pas">
+            <Form>frm_employee_details</Form>
+        </DCCReference>
+        <DCCReference Include="Settings\frm_trans_history.pas">
+            <Form>frm_transaction_history</Form>
+        </DCCReference>
+        <DCCReference Include="POS\sales_frm.pas">
+            <Form>pos_sales_frm</Form>
+        </DCCReference>
+        <DCCReference Include="POS\pos_sales_price.pas">
+            <Form>pos_sales_price_update_frm</Form>
+        </DCCReference>
+        <DCCReference Include="POS\pos_sales_input_qty_frm.pas">
+            <Form>pos_sales_qty_frm</Form>
+        </DCCReference>
+        <DCCReference Include="POS\pos_sales_returns_frm.pas">
+            <Form>sales_return</Form>
+        </DCCReference>
+        <DCCReference Include="POS\pos_salesdiscount_frm.pas">
+            <Form>pos_sales_discount_frm</Form>
+        </DCCReference>
+        <DCCReference Include="POS\pos_salespayment_frm.pas">
+            <Form>pos_sales_payment_frm</Form>
+        </DCCReference>
+        <DCCReference Include="MasterFile\inventory.pas">
+            <Form>mf_inventory_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Stock_distribution\Details_distribution.pas">
+            <Form>frm_distribution_details</Form>
+        </DCCReference>
+        <DCCReference Include="Stock_distribution\frm_qty.pas">
+            <Form>distribution_qty_frm</Form>
+        </DCCReference>
+        <DCCReference Include="Stock_distribution\stocks_distribution.pas">
+            <Form>stock_distribution_frm</Form>
+        </DCCReference>
+        <DCCReference Include="accounts_payable\accounts_pay.pas">
+            <Form>accounts_payable_frm</Form>
+        </DCCReference>
+        <DCCReference Include="accounts_payable\ap_detail\accounts_p_details.pas">
+            <Form>ap_detail_frm</Form>
+        </DCCReference>
+        <DCCReference Include="accounts_payable\pay\pay_accounts.pas">
+            <Form>payment_frm</Form>
+        </DCCReference>
+        <DCCReference Include="accounts_receivable\acc_receivable_details_form.pas">
+            <Form>frm_ar_details</Form>
+        </DCCReference>
+        <DCCReference Include="accounts_receivable\acc_receivable_form.pas">
+            <Form>frm_accounts_receivable</Form>
+        </DCCReference>
+        <DCCReference Include="Settings\frm_control_settings.pas">
+            <Form>frm_settings</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Accounts_payable_report.pas">
+            <Form>frm_accts_payable</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Accounts_receivable_report.pas">
+            <Form>frm_accts_receivable_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Customer_details_report.pas">
+            <Form>frm_cust_det_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Customer_report.pas">
+            <Form>frm_customer_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Employee_details_report.pas">
+            <Form>frm_emp_details_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Employee_report.pas">
+            <Form>frm_emp_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Inventory_report.pas">
+            <Form>frm_inv_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\RR_report.pas">
+            <Form>frm_rr_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\sales_receipt.pas">
+            <Form>frm_receipt</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Stock_card_report.pas">
+            <Form>frm_stock_card_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Supplier_detail_report.pas">
+            <Form>frm_supp_det_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Supplier_report.pas">
+            <Form>frm_supp_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Transaction_code_report.pas">
+            <Form>frm_trans_code_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Transaction_history_report.pas">
+            <Form>frm_trans_hist_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Purchasing_order_report.pas">
+            <Form>frm_po_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Purchasing_order_details_report.pas">
+            <Form>frm_po_details_report</Form>
+        </DCCReference>
+        <DCCReference Include="Reports\Inventory_information_report.pas">
+            <Form>frm_inv_info_report</Form>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">DOH.dpr</Source>
+                </Source>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>
